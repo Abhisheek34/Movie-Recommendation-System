@@ -44,4 +44,9 @@ def recommend_movies(request: MovieRequest):
         recommended_title = list_titles[index]
         recommendations.append(recommended_title)
 
+
     return {"input_movie": close_match, "recommendations": recommendations}
+
+@app.get("/")
+def home():
+    return {"message": "Movie recomendation running , visit /docs for swagger UI."}
